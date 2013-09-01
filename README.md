@@ -1,5 +1,7 @@
 A Converter for Liang's Linear-Time Dynamic Programming Parser input/output
+
 Lingpeng Kong (lingpenk at cs dot cmu dot edu)
+
 Aug 31, 2013
 
 Introduction:
