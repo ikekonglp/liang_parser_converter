@@ -35,9 +35,16 @@ public class ConllStru {
 	}
 	
 	private void parse(LiangTreeNode treeNode, ArrayList<ConllNode> conllNodes, int parentIndex){
-		String[] sp = treeNode.getContent().trim().split("/");
-		String word = sp[0];
-		String POS = sp.length == 2 ? sp[1] : "-";
+		String word = "";
+		String POS = "";
+		String cont = treeNode.getContent().trim();
+		int t = cont.lastIndexOf("/");
+		if(t > 0){
+			word = cont.substring(0, t);
+			POS = cont.substring(t+1, cont.length());
+		}else{
+			word = cont;
+		}
 		
 		ConllNode cn = new ConllNode(treeNode.getIndex(), word, POS, parentIndex);
 		conllNodes.add(cn);
